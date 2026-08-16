@@ -623,6 +623,9 @@
     </footer>
 
     <script>
+        // GOOGLE APPS SCRIPT URL UPDATED [source: 5]
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbycbHpfNSIhsIN-CvtCqDwG342-OwcvNK_XkemmOyo0-BtGCpo2naZZnJMpfgrhFVYKiQ/exec";
+
         const PRODUCT_BARCODES = {
             KHAN_GIAY: ["8938548008085"],
             REMOS: [
@@ -1615,7 +1618,7 @@
                     status.innerHTML = "❌ Lỗi đọc file Excel/CSV. Vui lòng kiểm tra lại định dạng file.";
                 }
             };
-            reader.readAsArrayBuffer(file);
+            reader.readAsBuffer ? reader.readAsBuffer(file) : reader.readAsArrayBuffer(file);
         }
 
         function handleQuickAddDay(event) {
